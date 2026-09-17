@@ -152,3 +152,68 @@ nav a:hover {
 .btn-cadastrar:hover {
     border-color: var(--verde-escuro);
 }
+
+/* Menu Hamburguer */
+
+.hamburguer {
+    display: none; /*Serve para ocultar o botão do Menu Hamburguer*/
+    font-size: 24px;
+    background: none; /*Serve para remover a cor de fundo (Onde tiver o none, é pq está tirando algo)*/
+    border: none; /*Serve para remover a bordar*/
+    cursor: pointer; /*Serve para mudar o cursor*/
+}
+
+/*Somente do Desktop, só existe no mobile*/
+.nav-actions {
+    display: none;
+}
+
+
+
+/* Responsavidade */
+/*Serve para deixar o site para computador  e para tela de celular */
+@media (max-width: 768px) {
+    .hamburguer {
+        display: block;
+    }
+
+    .actions {
+        display: none;
+        /* Os botões originais do header somem no mobile, porque agora eles moram dentro do menu */
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cor-fundo);
+        border-bottom: 1px solid var(--cor-borda);
+        padding: 16px 24px;
+        gap: 16px;
+    }
+
+    /* Classe que o JavaScript vai adicionar/remover para mostrar o menu */
+    .nav.ativo {
+        display: flex;
+    }
+
+    .nav-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    border-top: 1px solid var(--cor-borda);
+    padding: 16px;
+    width: 100%;
+}
+
+.nav-actions .btn {
+    flex: 1;
+    /*Os dois botões dividem a largura igualmente*/
+}
+
+}
